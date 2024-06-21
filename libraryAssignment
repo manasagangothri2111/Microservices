@@ -1,0 +1,27 @@
+Develop a library management API. Users can be either librarians (ADMIN) or regular members (USER).
+Librarians (ADMIN):
+Can add, update, and delete books.
+Can view a list of all borrowed and available books.
+Can view information about all registered users.
+Members (USER):
+Can search for books by title or author.
+Can view information about available books.
+Can request to borrow a book (mark it as borrowed).
+Security Requirements:
+Implement JPA-based authentication. Users should be able to login using their credentials against database. Use Spring Security to secure API endpoints based on user roles (ADMIN/USER).
+Project Setup:
+Create a Spring Boot project using Spring Initializr with dependencies for Web, Security, MySQL, and JPA (for database access).
+Configure a database (e.g., H2 in-memory, MySQL, Postgresql) for storing book and user information.
+Entity Models:
+Define entity models for Book and User with relevant attributes (title, author, username, password etc.).
+Implement JPA repositories for CRUD operations on books and users.
+User Service:
+Develop a service for user registration, login, and information retrieval.
+Implement logic for password hashing (e.g., BCrypt) for secure storage.
+Security Configuration:
+Implement role-based authorization rules for API endpoints as specified in the scenario.
+API Controllers:
+Develop RESTful controllers for managing books and user functionalities.
+Implement endpoints for searching books, borrowing requests, user information retrieval (for librarians), etc.
+Testing:
+Test the API endpoints along with security using Postman or CURL

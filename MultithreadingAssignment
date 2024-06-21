@@ -1,0 +1,32 @@
+Java LINK : https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/stream/package-summary.html
+
+Assignment 1: Filtering and Mapping
+Write a Java program that uses the Stream API to perform the following tasks on a list of integers:
+Filter out the even numbers.
+Square each remaining number.
+Find the sum of the squared numbers.
+Assignment 2: String Manipulation
+Create a Java program that uses the Stream API to work with a list of strings:
+Filter out the strings that have a length less than 5.
+Convert the remaining strings to uppercase.
+Concatenate all the uppercase strings into a single comma-separated string.
+Assignment 3: Student Information
+Design a class Student with attributes name, age, and grade. Create a list of students and then use the Stream API to perform the following operations:
+Filter out students who are below 18 years old.
+Sort the remaining students by their grades in ascending order.
+Print the names of the top three students based on their grades.
+Assignment 4: File Processing
+Write a Java program that reads a text file containing a list of words and uses the Stream API to:
+Filter out the words that start with the letter 'A'.
+Count the occurrences of each remaining word.
+Print the word and its count in descending order of count.
+Assignment 5: Data Transformation
+Create a class Person with attributes name, gender, and age. Given a list of persons, use the Stream API to:
+Filter out persons with age less than 30.
+Map the remaining persons to a new list containing only their names.
+Print the distinct names in alphabetical order.
+11:22
+Multi-Threading Assignments
+11:23
+Assignment 1: Write a Java program that demonstrates the basic concept of multithreading. Create two threads that print numbers from 1 to 10 concurrently. Ensure proper synchronization to avoid race conditions.
+Assignment 2: Develop a multithreaded Java program to simulate a bank account transaction. Create two threads, one for deposit and one for withdrawal. Implement synchronization mechanisms to ensure that deposits and withdrawals do not interfere with each other.

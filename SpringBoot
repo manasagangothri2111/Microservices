@@ -1,0 +1,50 @@
+SpringBoot:
+Profiling--> how to set profiles?
+any package should be created out of base package. Else the componenets will not be scanned automatically in springboot.
+If pacakge is different from base package we need to mention the @componentscan(basePackage="com.cts.package")
+
+--CommandLineRunner in springboot
+run method in SpringBoot
+
+Reflection API: need to prepare ,it is part of Java
+
+Difference between RestController and Controller
+
+@GeneratedValue(strategy = GenerationType.AUTO)
+
+Read about Mutation Testing
+
+What is White Label Error
+
+Write your code interms of interfaces, thus your code is loosly coupled. we will be able to do the enhancements
+
+@autowired is not required from spring 5 over the constructors. but over the field it is required
+
+Q. When to use JPArepository and when to use CURDRepository
+
+Spring Template in Java 22
+$Proxy object is used for the Repository to implement all the methods
+
+EmployeeRepository can be implemented by Spring data JPA by a Proxy class
+
+what will happend if we have @component at Repository class
+
+--> avoid saying singleton design pattern.
+--> try to learn non-gang of 4 design pattern. Such as Event Loop, DTO design pattern
+--> NodeJS works on EventLoop architecture.
+---> questions on caching
+---> questions on scalability
+Q. How will you optimize java application
+
+Spring Reactive aplication
+1. Add dependency R2DBC to develop spring reactive application
+
+Microservices:
+-->Articles to refer for microservices.
+Fiegn client -- synchronous communication
+
+CloudServer gmail Id
+springcloudTest24@gmail.com
+pw: StackRoute@123
+
+

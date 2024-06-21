@@ -1,0 +1,47 @@
+Spring Core Assignment
+Load SimpleDateFormat from Spring Configuration XML SimpleDateFormat with the pattern ‘dd/MM/yyyy’ is created in multiple places of an application. To avoid creation of SimpleDateFormat in multiple places, define a bean in Spring XML Configuration file and retrieve the date. Follow steps below to implement:
+· Create spring configuration file date-format.xml in src/main/resources folder of 'spring-learn' project
+· Define bean tag in the XML with for date format.
+· Create new method displayDate() in SpringLearnApplication.java
+· In displayDate() method create the ApplicationContext. Refer code below:
+· Get the dateFormat using getBean() method. Refer code below.
+SimpleDateFormat format = context.getBean(""dateFormat"", SimpleDateFormat.class);
+· Using the format variable try to parse string '31/05/2022' to Date class and display the result using System.out.println.
+· Run the application as 'Java Application' and check the result in console log output.
+ 
+Hint:
+<bean id=""dateFormat"" class=""java.text.SimpleDateFormat"">
+<constructor-arg value=""dd/MM/yyyy""/>
+</bean>"
+
+
+Spring Lifecycle:
+Implement a bean with custom initialization and destruction methods.
+Define any bean in beans.xml with it respective dependencies
+Observe the bean lifecycle through console logs.
+ 
+Property Injection:
+Create a bean that reads properties from a properties file and injects them into its fields.
+Demonstrate how to access these properties within the bean.
+ 
+Bean Autowiring :
+Create a Spring application with two beans: Employee and Address. Use autowiring by name to inject Address into Employee. Configure these beans in XML.
+ 
+Bean Inheritance :
+Define a parent bean Animal with properties like name and sound. Create child beans Dog and Cat inheriting from Animal. Configure these beans in XML with specific values and test them inside main method
+has context menu
+
+
+AOP:
+Spring AOP Assignments
+Logging Aspect:
+Create an aspect that logs method calls (including method name, arguments, and return value) for a specific package or class.
+Explore different logging levels (e.g., DEBUG, INFO, WARN) to control the verbosity of logs.
+ 
+Security Aspect:
+Design an aspect that checks for user authentication before allowing execution of specific methods.
+Implement a simple authentication mechanism (e.g., checking a user object in the session or some other kind of authentication) and throw exceptions for unauthorized access.
+ 
+Performance Monitoring Aspect:
+Develop an aspect that measures the execution time of methods and logs the results.
+Consider using annotations to configure which methods to monitor and potentially identify performance bottlenecks.

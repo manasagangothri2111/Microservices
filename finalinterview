@@ -1,0 +1,27 @@
+Explain the difference between HashMap and ConcurrentHashMap in Java.
+	1. HashMap is not thread safe , ConcurrentHashMap is thread safe
+	2. Performance is high  , performance is low
+	3. concurrent hashmap is designed to be thread safe without synchronizing the whole map. it acheives concurrency by dividing map into segments
+	and different threads can operate on different segments without blocking each other.
+	4. If we do any modification while iterating over hashmap we get concurrentModificationException. In other case we won't get the exception
+	
+What is the purpose of the transient keyword in Java? How does it differ from static and final keywords?
+  when we are serializing an object if we don't want to serialize specific fields or data memebers then we mention it as transient keyword. then that filed is not included in the serialization. While de-serializing the field will get its default value.
+  
+How does the volatile keyword work in Java? When would you use it?
+
+
+Explain the concept of Java memory model (JMM) and its significance in multi-threaded programming.
+What are the benefits of using Java 8 features such as lambda expressions, streams, and functional interfaces? Provide examples of their usage.
+Discuss the advantages and disadvantages of using Java serialization for object persistence. What alternatives would you consider?
+How does garbage collection work in Java? Explain different types of garbage collectors available in the JVM. --mark and sweep
+What is reflection in Java? Provide examples of scenarios where reflection is useful and discuss its limitations.
+Explain the principles of design patterns and provide examples of commonly used design patterns in Java.
+Discuss the pros and cons of using Java EE (Enterprise Edition) compared to Spring Framework for enterprise application development.
+What is the difference between composition and inheritance in object-oriented programming? When would you prefer one over the other?
+Discuss the role of JVM (Java Virtual Machine) in executing Java programs. Explain the bytecode execution process.
+What are the advantages and disadvantages of using multi-threading in Java applications? How do you ensure thread safety?
+Explain lazy and eager operations in Java Stream API
+flatMap vs map in stream API
+Explain Executors Framework in Java Concurrency.
+aggregation

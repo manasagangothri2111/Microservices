@@ -1,0 +1,39 @@
+public class StreamDemo7 {
+	public static void main(String[] args) {
+		List<Employee> employees = new ArrayList<>();
+		employees.add(new Employee("sai", "kiran", 22000, "active", new Department(1, "HR")));
+		employees.add(new Employee("amir", "khan", 42000, "active", new Department(2, "IT")));
+		employees.add(new Employee("john", "doe", 32000, "inactive", new Department(1, "HR")));
+		employees.add(new Employee("ravi", "kishan", 44000, "active", new Department(2, "IT")));
+		employees.add(new Employee("bhanu", "pratap", 33000, "inactive", new Department(1, "HR")));
+		employees.add(new Employee("paul", "sundar", 28000, "active", new Department(2, "IT")));
+		employees.add(new Employee("irfan", "pathan", 52000, "inactive", new Department(3, "SALES")));
+		employees.add(new Employee("mahesh", "babu", 11000, "active", new Department(3, "SALES")));
+		employees.add(new Employee("virat", "kohli", 66000, "inactive", new Department(4, "LEGAL")));
+		employees.add(new Employee("rama", "rao", 77000, "active", new Department(4, "LEGAL")));
+//		display count of active employees
+		LinkedList<Employee> countByStatus = employees.stream().filter(e -> e.getStatus().equals("active"))
+				.collect(Collectors.toCollection(LinkedList::new));
+//		long countByStatus = employees.stream().filter(e -> e.getStatus().equals("active")).count();
+//		System.out.println(countByStatus);
+//		display employees details by department wise
+		Map<Department, List<Employee>> groupByDept = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getDept));
+		groupByDept.forEach((k, v) -> System.out.println(k.getDeptName() + " ==> " + v));
+//		display employee count by department wise
+		groupByDept.forEach((k, v) -> System.out.println(k.getDeptName() + " ==> " + v.size()));
+		System.out.println("employeees count by department");
+		HashMap<Department, Long> countByDept = employees.stream().collect(
+				Collectors.groupingBy(Employee::getDept, HashMap<Department, Long>::new, Collectors.counting()));
+		countByDept.forEach((k, v) -> System.out.println(k.getDeptName() + " ==> " + v));
+		System.out.println("display active / inactive employees");
+		Map<Boolean, Long> collect = employees.stream().collect(Collectors.partitioningBy(e -> e.getStatus().equals("active"), Collectors.counting()));
+//		collect.forEach((k,v) -> System.out.println(k + " ==> "+v.stream().map(Employee::getFirstName).toList()));
+		collect.forEach((k,v) -> System.out.println(k + " ==> "+v));		
+		
+//		display highest salary employee by each department
+		System.out.println("Highest salary employee by department");
+		Map<Department,Optional<Employee>> collect2 = employees.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
+		collect2.forEach((k,v) -> System.out.println(k.getDeptName() + " highest salary Employee Name "+ v.get().getFirstName()));
+	}
+}

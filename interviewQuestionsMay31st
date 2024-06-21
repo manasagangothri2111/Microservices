@@ -1,0 +1,10 @@
+1. Explain the difference between composition and inheritance. Why should favor composition over inheritance in Java?
+2. Elaborate on Encapsulation and Abstraction with clear examples in real-time
+3. How to create an immutable object in Java
+4. Can we create an Immutable object, which contains a mutable object?
+5. Can Abstract class have main method?
+6. Differences between Heap and Stack Memory
+7. equals() method VS == operator
+8. Why String is immutable in Java?
+9. What is intern() method from String class? How it works?
+10. Explain hashCode() and equals() method contract

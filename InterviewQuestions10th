@@ -1,0 +1,24 @@
+Interview Questions: 10-06-2024
+What is a Marker interface in java ?
+Tell me 5 Spring Exceptions that you came across.
+Tell me 5 spring Annotations that you have used ? (Excluding the stereotype annotations)
+Is it required to write @Repository annotations in spring data JPA?
+Explain the Spring Data Project and the hierarchy ?
+Use of  @NoRepositoryBean in spring boot ? Can we write @NoRepositoryBean on top of our Repositories interfaces ?
+What is a  java config file  and What is it' s limitations?
+How a CGLIB Proxy works with @Bean?
+@Component vs @Bean . What is the difference between creating a bean with @Bean and creating a bean with @Component ?
+What is a BeanFactoryPostProcessor?
+Bean Factory Post Processor Code walkthrough
+What do you mean by a @Transactional Annotation and explain the Transactional Propagation in spring?
+Transactional Propagation Explained !
+Update vs Merge | Difference between update and merge method in JPA / Hibernate?
+application.properties vs application.yaml , Which will load first ?
+How the dispatcher servlet is set up in a spring boot project?
+how the dispatcher servlet in spring boot gets auto-configured?
+How will you handle exceptions in spring?
+Explain the need of a global exception handler in spring boot ?
+Difference between @ControllerAdvice and @RestControllerAdvice?
+How will you handle a Bad gateway exception when thrown from a rest client ?
+What is ThreadLocal in Java? Tell me a real time scenario if you have used it ever.
+Explain Spring SecurityContext scope

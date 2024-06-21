@@ -1,0 +1,46 @@
+Spring Framework : Framework of Frameworks
+------------------------------------------
+Apache Maven :Build tool to develop Java applications
+
+Build: Compile + package+test+install+deploy
+
+Required JARs or Project dependencies are downloaded automatically
+
+Build Lifecycle:
+1. Clean: pre-clean, clean, post-clean
+2. Build(default)
+3. Site: pre-site, site, post (maven command is mvn site)
+
+plugins:
+----------------
+mvn compile==> compiler plugin of maven is started and it performs compilation of java sourcecode.
+
+mvn test==> surefire plugin of maven is started and it run test classes and show test result.
+
+Container is technically an interface--> it will instantiate all the beans, manage the bean lifeCycle, bean collobration.
+
+
+Bean Factory and application context
+var keyword -->it can store any type of data, Available since Java 10
+Jakarta--> annotation API
+
+Q--> are singleton beans threadsafe
+
+One bean is singleton --> another bean is Prototype   --> what is the behaviour
+mutable object has immutable objects --> what is the behaviour
+
+Spring AOP uses Proxy design pattern
+
+Spring Core
+Spring AOP
+Spring Boot + Spring Data JPA
+Spring Security
+Unit Testing Junit +Mockito
+Spring Webflux: Reactive & Non-Blocking(Mono & Flux)
+
+Microservices:
+Doubt:
+What is the default time of the cache in SpringBoot
+
+steps to generate token in github
+profile->settings->developer settings -> personal access tokens->fine grained token-> generate
