@@ -1,0 +1,8 @@
+Step 1: create a folder named as "json-server"
+Step 2: open this folder using VS Code (IDE)
+Step 3: create a db.json file in the root
+Step 4: generate a package.json file using the command "npm init -y"
+Step 5: install json-server locally using the command "npm i json-server"
+Step 6: add this under "scripts" in package.json: "serve-json": "json-server --watch db.json"
+Step 7: run json-server using the command: "npm run serve-json"
+Step 8: test the apis using "http://localhost:3000"

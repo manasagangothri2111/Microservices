@@ -1,0 +1,34 @@
+Resilience4j
+-Resilience4j is a lightweight fault tolerance library designed for functional programming.
+-It provides a set of tools and design patterns that help applications handle failures gracefully and recover quickly from them.
+-Resilience4j provides higher-order functions (decorators) to enhance any functional interface, lambda expression or method reference with a Circuit Breaker, Rate Limiter, Retry or Bulkhead.
+Modularization:
+With Resilience4j you don't have to go all-in, you can pick what you need.
+Resilience4j provides several core modules and add-on modules:
+All core modules and the Decorators class
+resilience4j-all
+Core modules
+resilience4j-circuitbreaker: Circuit breaking
+resilience4j-ratelimiter: Rate limiting
+resilience4j-bulkhead: Bulkheading
+resilience4j-retry: Automatic retrying (sync and async)
+resilience4j-cache: Result caching
+resilience4j-timelimiter: Timeout handling
+Frameworks modules
+resilience4j-spring-boot3: Spring Boot 3 Starter
+resilience4j-spring-boot2: Spring Boot 2 Starter
+resilience4j-micronaut: Micronaut Starter
+Reactive modules
+resilience4j-rxjava2: Custom RxJava2 operators
+resilience4j-rxjava3: Custom RxJava3 operators
+resilience4j-reactor: Custom Spring Reactor operators
+Metrics modules
+resilience4j-micrometer: Micrometer Metrics exporter
+resilience4j-metrics: Dropwizard Metrics exporter
+Breakdown of the core components offered by Resilience4j:
+CircuitBreaker: This component acts like a safety mechanism. It monitors the health of external services or application components. If failures exceed a certain threshold, the circuit breaker trips, preventing further calls and protecting the system from cascading failures. Once the situation improves, the circuit breaker automatically resets and allows calls again.
+RateLimiter: This component regulates incoming requests to prevent overloading a service or resource. It enforces a limit on the number of requests allowed within a specific time window. This helps maintain application performance and stability under heavy load.
+Bulkhead: This component isolates concurrent calls to a particular service or resource within a fixed thread pool. This prevents a single failing service from consuming all available threads and impacting other parts of the application.
+Retry: This component automatically retries failed operations based on a defined strategy. This can be useful for handling transient errors that might resolve themselves on a retry.
+TimeLimiter: This component sets a timeout limit for calls to external services or slow operations. If a call exceeds the timeout, it's considered a failure. This helps prevent applications from getting stuck waiting for unresponsive services.
+Cache (Add-on module): This optional module allows caching results from calls to external services or slow operations. This can improve performance and reduce load on external systems by serving cached responses for repeated requests.

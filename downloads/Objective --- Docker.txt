@@ -1,0 +1,135 @@
+Objective --- Containerizing RESTful service and Database by Using Docker.
+
+Docker
+-----------
+---- It is Container technology used to build,ship and run an application in any device.
+---- Docker packages applications into standardized units called as containers.
+---- These containers will have everything the software needs , like libraies tools, code.
+Example
+
+ I can pack the springboot Rest API in a  Docker container , we can pack a database like Mongo DB or Mysql.
+
+Advantages
+
+----  Flexible.
+---- easy moving and maintaing the applications
+----- better security 
+
+
+Components of Docker
+
+--- Docker image  
+
+ A template that includes all the dependencies, deployment and execution configuration used by the container.
+--- we cant modify ( immutable)
+-- Multiple Docker images can be stacked in a single Docker Container.
+
+--- Docker Container 
+
+--- Docker Container is created from the Docker image.
+---- Docker container is the runnable instance of the Docker image.
+
+
+Building a Docker image
+--- from scratch
+--- from the Docker Registry
+
+Registry
+---  local repository or folder in the local file system
+--- public repository like Docker Hub.
+
+Installing the Docker
+
+https://docs.docker.com/desktop/install/windows-install/
+https://docs.docker.com/desktop/install/linux-install/
+
+Dockerize MongoDB
+
+---- Pull the MongoDB image  from Docker hub
+---- Run the Mongo Container 
+Use Docker Desktop and type Mongo in the search image.
+
+open the Power shell and type 
+Docker pull mongo
+Docker run -d mongo:latest
+___ To view the containers running currently
+Docker ps
+To view all the containers both running and stopped 
+Docker ps -a
+We can provide name to the container by the command
+Docker run -d --name mongo-container mongo
+Docker ps -a
+
+Create a Docker Network
+
+Docker network create <name of the network>
+Docker network create  user-network1
+
+To view all the networks
+Docker network ls
+
+
+
+
+Dockerize Mysql
+
+-- Docker pull mysql
+
+run the image to create the container on the network which we created "user".
+
+docker run -it --network user-network1 --name mysqlservice -e MYSQL_ROOT_PASSWORD=root -d mysql
+
+
+Dockerize Spring Boot Application
+Steps
+--- Create the Docker image of the Spring Boot application
+--- Run the Docker image and create the container.
+
+Steps
+-- Create the docker file( contains all the configurations necessary to build the image)
+--Build the Dockerfile to create the image
+-- Run the image to create the container
+
+Dockerfile (Text document)
+-- It contains the commands a user  can call on the cmd to create the image
+
+contains all the step by step instructions for all the commands required to assemble the Docker image.
+
+ Created the docker file----
+
+#openjdk is the docker image for Java JDK the application will use
+FROM openjdk
+#creating a working directory inside the docker container of the application
+WORKDIR usr/lib
+#Copy the executable jar file that is created
+#in the target folder and add it to the usr/lib working directory
+ADD ./target/authenticationservice-2.7.3.jar /usr/lib/authenticationservice-2.7.3.jar
+#Run the jar file using the java -jar command
+ENTRYPOINT ["java","-jar","authenticationservice-2.7.3.jar"]
+
+
+------ Run Maven lifecycles to create a jar file named "authenticationservice-2.7.3.jar"
+--- clean --> compile---> package
+
+run the commands in the terminal power shell
+build command
+-- docker build -t user-app:v1 .
+
+-t ---> we are giving a name and version for the application
+. - specifies that the dockerfile is present in the root folder.
+
+--- Run the Springboot container
+--  docker run -d -p 8084:8084 --name user-spring-app --network user-network1 user-app:v1
+
+
+
+
+
+
+
+
+
+
+
+
+

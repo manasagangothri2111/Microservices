@@ -1,0 +1,48 @@
+Ecomerce website .
+
+work flow
+
+Objective --- Create a Single Entry Point to route the requests comming from the client for different microservices using spring Cloud.
+
+
+Microservices Desing Pattern
+
+Are software desing pattern that can be used to generate reusable 
+autonomous services.
+
+----- API Gateway pattern.( Single Entry Point)
+----- Service Discovery Pattern
+----- Circuit Breaker Pattern.
+
+ Spring Cloud API Gateway
+
+It an opensource library built on the top of the spring ecosystem.
+To provide simple way to route the APIs.
+
+Spring Cloud API Gateway Architecture
+--- Predicate -(Java 8 Function Predicate )(Its an object) (It will test whether a given request fulfills a given condition).(can one or more predicates)
+
+
+--- Filter  Instance of Spring Framework GatewayFilter
+
+--- Route (basic building block,It will have id, predicates, filters)
+
+Dependency
+
+--- spring cloud routing depency(Gateway spring cloud routing)
+
+create a java  configuration class which will configure the routes.
+
+RouteLocator 
+RouteLocatorBuilder
+
+ 
+
+
+
+
+
+ 
+
+
+

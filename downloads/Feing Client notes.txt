@@ -1,0 +1,57 @@
+Objective ---  Synchronous communication between the micro services using Feing Client
+
+--- Microservices Communication
+--- Types of Communications
+------------ Synchronous (Feing Client)
+------------ Asynchronous (Kafka, RabbitMQ)
+
+Commu nication is in between UserMovieService and UserAuthentication service
+
+Orchestration Process -- IS the process Where one microservice calling another microservice.
+Only if a user registers then user data can be saved , so only after the /register is called the /save will be called 
+this type of communication is called Synchronous communication.
+This can be aceived throug Feing Client
+
+Steps for Feing Client
+
+
+--- Add the dependency
+ UserMovie Service POM.xml
+<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
+
+---In the UsermovieService main method 
+@EnableFeignClients
+
+---Create a proxy in UserMovie Service
+Its an interface 
+@FeingClient(name = "name of the service", url= "path to service")
+
+---Autowire the proxy in service layer
+
+  private UserProxy userProxy;
+ public User registerUser(User user) throws UserAlreadyExistsException {
+        if(userMovieRepository.findById(user.getEmail()).isPresent())
+        {
+            throw new UserAlreadyExistsException();
+        }
+       User savedUser = userMovieRepository.save(user);
+        if(!(savedUser.getEmail().isEmpty()))
+        {
+            ResponseEntity r = userProxy.saveUser(user);
+            System.out.println(r.getBody());
+        }
+        return savedUser;
+    }
+
+
+
+
+
+
+
+
+

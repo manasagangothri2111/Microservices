@@ -1,0 +1,66 @@
+Objective --- Register Microservices on a Netflix Eurekha Discovery Server
+
+Eurekha Server
+
+--- Service Registration and Discovery (Desing Pattern)
+
+In this desing pattern there is dedicated server which is responsible to maintain the list of addresses of the services that are deployed or removed  in a server.
+This is also called as registry.
+
+Eurekha Server
+
+This acts as a Registry where the microservices are registered.
+This Eurekha Server is also Known as Discovery Server
+
+Dependency (Eureka server dependency)
+-----------------------------------------
+Eureka Server Spring cloud discovery
+
+
+<spring-cloud.version>2021.0.4</spring-cloud.version>
+<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>
+
+
+<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+
+Eureka client dependency
+---------------------------
+<spring-cloud.version>2021.0.4</spring-cloud.version>
+<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+
+<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+Example
+---
+
+create a microservice in spring Io intializer which will work as a register server. 
+

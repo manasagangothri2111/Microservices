@@ -1,0 +1,24 @@
+Objective ---
+
+Containerize Restful services and database by using Docker Compose.
+
+---Docker Compose
+Its a tool used to define and run multi container Docker application.
+-each container runs in isolation but they can interact with each other.
+
+--- Yaml file to configure all the application services.
+
+-- single command is used to start all the services which we mention in the yaml.
+
+workflow DockerCompose 
+
+--- spring Boot application with Docker file
+--- Define all the services that are in the spring boot application in docker-compose.yml file at root.
+--- Run the docker compose up command.
+
+
+Run docker-compose.yml
+--- docker-compose up --build
+
+To stop all the containers
+-- docker-compose down
